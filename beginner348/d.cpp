@@ -3,34 +3,15 @@ using namespace std;
 
 int main()
 {
-string s;
-cin>>s;
-vector<int>english(26,0);
-for (int i = 0; i < s.length(); i++)
+long long L,R;
+cin>>L>>R;
+vector<int>nizyou(61,1);
+for (int i = 1; i < nizyou.size(); i++)
 {
-    english[s[i]-'a']++;
-}
-bool hantei=true;
-
-
-
-
-vector<int>ans(101,0);
-for (int i = 0; i < english.size(); i++)
-{
-    ans[english[i]]++;
+    nizyou[i]=nizyou[i-1]*2;
 }
 
-for (int i = 1; i < ans.size(); i++)
-{
-    if((ans[i]!=2)&&(ans[i]!=0))
-    hantei=false;
-}
 
-if(hantei)
-cout<<"Yes"<<endl;
-else 
-cout<<"No"<<endl;
 
     return 0;
 }
