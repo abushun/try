@@ -3,26 +3,27 @@ using namespace std;
 
 int main()
 {
-    int n,a;
-    cin>>n;
-
-    vector<int> h(n,0);
-for (int i = 0; i < h.size(); i++)
-{
-    cin>>a;
-    h[i]=a;
-}
-
-    for (int i = 1; i < h.size(); i++)
+    int i;
+    int h;
+    cin >> h;
+    int tall;
+    int count = 1;
+    for (int i = 1; i < 50; i++)
     {
-        if(h[0]<h[i]){
-            cout<<i+1<<endl;
-            return 0;
+        if (i == 1)
+            tall = 1;
+        else
+        {
+            count = count * 2;
+            tall = tall+count;;
         }
-       
+        // cout<<tall<<endl;
+        if (h < tall)
+        {
+            cout << i << endl;
+            break;
+        }
     }
 
-    cout<<-1<<endl;
-    
     return 0;
 }
